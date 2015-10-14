@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>images/1265398629_print_printer.png</file>
+        <file>images/1267525974_info.png</file>
+        <file>images/1267597193_shutdown.png</file>
+        <file>images/1267597768_3floppy_unmount.png</file>
+        <file>images/1267597773_Volume Manager.png</file>
+        <file>CI4prev.ico</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>frmHelp</class>
+ <widget class="QDialog" name="frmHelp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>499</width>
+    <height>341</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="img.qrc">
+    <normaloff>:/img/images/1267525974_info.png</normaloff>:/img/images/1267525974_info.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>Short description of the methods applied in the program
+
+The program calculates two-sided confidence intervals (CI) for prevalence of a disease taking into account the sensitivity and specificity of the diagnostic test by which patients are classified as diseased or not. Details of the method are described in Reiczigel, Földi, Ózsvári, 2010 (Epidemiology and Infection, in press).
+
+Note that the computation assumes that sensitivity and specificity are known exactly. For the case when they are estimated from the same experiment or from an experiment of comparable size, no exact calculation is still available. In such cases we only know that the right CI would be wider than the CI calculated by the program.
+
+Three exact methods (Clopper-Pearson, Blaker, and Sterne method) and an asymptotic one (Wilson score method) are implemented in the program for CI construction.
+
+The Clopper-Pearson CI is the most conservative among these CIs because it maintains symmetric non-coverage probabilities (for a 95% CI it holds that upper non-coverage = lower non-coverage = 2.5%), while the other two exact CIs do not. Therefore if one wants to use the two-sided CI calculated by the program to transform it into a one-sided CI, should apply the Clopper-Pearson method. 
+
+For the Wilson method, its modification is implemented as described in Brown, Cai, DasGupta, 2001 (Statisical Science, 16, 101–133) Section 4.1.1, pp. 112-113. The modification aims to avoid the unacceptably low coverage of the original Wilson CI. We applied the Poisson approximation described there for x=1 and x=n-1. 
+
+For general use we recommend Blaker’s method if sample size is &lt;1000 (above that the exact computation may not be stable). For sample sizes &gt;1000 use Wilson’s method.
+
+With sample sizes &gt;500, computation with exact methods may run for 2-3 minutes (depending on the processor speed of the PC). According to our simulations, above 500 also Wilson's CI is acceptable.
+
+For further information or new versions please visit 
+www.univet.hu/users/jreiczig/prevalence-with-se-sp.html
+
+</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>frmHelp</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>frmHelp</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
